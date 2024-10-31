@@ -1,0 +1,50 @@
+<div class="container" *ngIf="bills">
+  <h2>Bill Details for {{ bills.customer?.name }}</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Customer ID</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{ bills.id }}</td>
+      <td>{{ bills.billDate | date:'dd/MM/yyyy' }}</td>
+      <td>{{ bills.customer?.id }}</td>
+
+    </tr>
+    </tbody>
+  </table>
+
+  <h3>Products</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of bills.productItemList">
+      <td>{{ item.product?.id }}</td>
+      <td>{{ item.product?.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.price | currency }}</td>
+      <td>{{ item.discount | percent }}</td>
+      <td>{{(item.quantity * item.price * (1 - item.discount)) | number: '1.3-3'}}</td> <!-- Montant calculé pour ce produit -->
+
+    </tr>
+    <tr class="font-weight-bold" style="background-color: #333; color: white;">
+      <td colspan="5" class="text-right">Total</td>
+      <td>{{totalAmount | number: '1.3-3'}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
