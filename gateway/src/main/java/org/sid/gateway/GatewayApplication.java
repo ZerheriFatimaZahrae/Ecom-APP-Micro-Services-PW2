@@ -16,23 +16,37 @@ public class GatewayApplication {
         SpringApplication.run(GatewayApplication.class, args);
     }
 
-    //@Bean
-    public RouteLocator routes(RouteLocatorBuilder builder) {
+  //@Bean
+    public RouteLocator routesDefinitionStatique(RouteLocatorBuilder builder) {
         return builder.routes()
-                /*
-                //les routes dynamique
-                .route(r->r.path("/customers/**").uri("http//localhost:8081"))
-                .route(r->r.path("/products/**").uri("http//localhost:8082"))
 
-                 */
-                .route(r->r.path("/customers/**").uri("lb//CUSTOMER-SERVICE"))
-                .route(r->r.path("/products/**").uri("lb//CUSTOMER-SERVICE"))
+                //les routes statiques par la configuracion java
+//                .route(r->r.path("/customers/**").uri("http//localhost:8081"))
+//                .route(r->r.path("/products/**").uri("http//localhost:8082"))
+//1er methode
+//lb c est load balancer , qd il y a une request de /customers -> aller au service customer-service
+                //gateway va aller au eurika service et demmande l adresse de nom de service
+               .route(r->r.path("/customers/**").uri("lb://CUSTOMERSERVICE"))
+                .route(r->r.path("/products/**").uri("lb://INVENTORY-SERVICE"))
                 .build();
     }
-    @Bean
+
+    /**
+     * Configuration d'une fonction pour définir des routes dynamiques dans la passerelle (gateway).
+     * Cette méthode retourne un bean de type DiscoveryClientRouteDefinitionLocator,
+     * qui utilise le client de découverte pour générer automatiquement des routes.
+     *
+     * @param rdc - Client de découverte réactif (ReactiveDiscoveryClient)
+     * @param dlp - Propriétés de configuration des routes (DiscoveryLocatorProperties)
+     * @return DiscoveryClientRouteDefinitionLocator configuré pour les routes dynamiques
+     */
+    @Bean // Indique à Spring de gérer l'objet retourné comme un bean
     DiscoveryClientRouteDefinitionLocator dynamicRoutes(ReactiveDiscoveryClient rdc,
-                                                        DiscoveryLocatorProperties dlp){
-        return new DiscoveryClientRouteDefinitionLocator(rdc,dlp);
+                                                        DiscoveryLocatorProperties dlp) {
+        // Retourne une instance de DiscoveryClientRouteDefinitionLocator
+        // qui permet la configuration dynamique des routes dans la passerelle
+        // en se basant sur les services enregistrés dans le client de découverte
+        return new DiscoveryClientRouteDefinitionLocator(rdc, dlp);
     }
 
 
