@@ -69,8 +69,11 @@ L'architecture micro-services de l'application est composée de :
 
 ## Execution : 
 ![Texte alternatif](screenshots/Screenshot 2024-10-29 205039.png)
+
 ![Texte alternatif](screenshots/Screenshot 2024-10-29 205120.png)
+
 ![Texte alternatif](screenshots/Screenshot 2024-10-29 222502.png)
+
 ![Texte alternatif](screenshots/Screenshot 2024-10-29 222552.png)
 ![Texte alternatif](screenshots/img.png)
 ![Texte alternatif](screenshots/img_1.png)
