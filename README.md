@@ -68,13 +68,14 @@ L'architecture micro-services de l'application est composée de :
    git clone <https://github.com/ZerheriFatimaZahrae/Ecom-APP-Micro-Services-PW2>
 
 ## Execution : 
-![Texte alternatif](screenshots/Screenshot 2024-10-29 205039.png)
+![Texte alternatif](screenshots/img_3.png)
 
-![Texte alternatif](screenshots/Screenshot 2024-10-29 205120.png)
+![Texte alternatif](screenshots/img_4.png)
 
-![Texte alternatif](screenshots/Screenshot 2024-10-29 222502.png)
+![Texte alternatif](screenshots/img_5.png)
 
-![Texte alternatif](screenshots/Screenshot 2024-10-29 222552.png)
+![Texte alternatif](screenshots/img_6.png)
+
 ![Texte alternatif](screenshots/img.png)
 ![Texte alternatif](screenshots/img_1.png)
 ![Texte alternatif](screenshots/img_2.png)
