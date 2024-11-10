@@ -8,7 +8,7 @@ Cette application est une solution basée sur une architecture micro-services qu
 - Développer une architecture flexible et évolutive en utilisant des micro-services pour une meilleure gestion et maintenance des différents composants.
 - Utiliser **Spring Cloud Eureka** pour le service d'annuaire qui enregistre et découvre les services disponibles.
 - Intégrer **Spring Cloud Gateway** comme passerelle, permettant un routage centralisé des requêtes aux différents services backend.
-- Déployer une application frontale avec **Angular** pour offrir une interface utilisateur pour la visualisation des factures.
+- Déployer une application frontend avec **Angular** pour offrir une interface utilisateur pour la visualisation des factures.
 
 ---
 
@@ -68,6 +68,8 @@ L'architecture micro-services de l'application est composée de :
    git clone <https://github.com/ZerheriFatimaZahrae/Ecom-APP-Micro-Services-PW2>
 
 ## Execution : 
+![Texte alternatif](screenshots/img_7.png)
+
 ![Texte alternatif](screenshots/img_3.png)
 
 ![Texte alternatif](screenshots/img_4.png)
